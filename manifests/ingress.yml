@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "heavonaks-03c8"
+    labels:
+        app: "heavonaks-03c8"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: heavon-aksbe67-heavonaks-03c8.ac2360d971f6475c842d.westus2.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "heavonaks-03c8"
+                servicePort: 80
