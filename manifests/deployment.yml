@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "heavonaks-03c8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "heavonaks-03c8"
+  template:
+    metadata:
+      labels:
+        app: "heavonaks-03c8"
+    spec:
+      containers:
+        - name: "heavonaks-03c8"
+          image: "heavon.azurecr.io/heavonaks"
+          ports:
+          - containerPort: 80
